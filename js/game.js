@@ -76,14 +76,15 @@ function Game(canvas, ctx) {
     this.pipeArray.forEach((pipe) => (pipe.gameSpeed = 0));
     document.querySelector('.final-score').innerHTML = this.score;
 
-    if (localStorage.getItem('high-score') === null) {
-      localStorage.setItem('high-score', 0);
+    let highScore = localStorage.getItem('high-score-flappy');
+
+    if (highScore === null) {
+      localStorage.setItem('high-score-flappy', 0);
     }
 
-    let highScore = localStorage.getItem('high-score');
     if (this.score > highScore) {
       highScore = this.score;
-      localStorage.setItem('high-score', this.score);
+      localStorage.setItem('high-score-flappy', this.score);
     }
     document.querySelector('.high-score').innerHTML = highScore;
   };
