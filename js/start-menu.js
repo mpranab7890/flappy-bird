@@ -20,14 +20,6 @@ function StartMenu() {
     startMenu.style.display = 'none';
     this.game = new Game(canvas, ctx);
   };
-
-  //Game Over Menu
-  // var gameOverMenu = document.querySelector('#qwe');
-  // var replayButton = document.querySelector('.replay-button');
-  // replayButton.onclick = () => {
-  //   gameOverMenu.style.display = 'none';
-  //   this.game = new Game(canvas, ctx);
-  // };
 }
 
 var startMenu = new StartMenu();

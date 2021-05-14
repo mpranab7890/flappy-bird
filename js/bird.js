@@ -34,7 +34,6 @@ function Bird(canvas, ctx, gameStarted, gameOverMenu) {
   };
 
   this.checkCollision = (pipe) => {
-    // console.log('checking');
     if (
       this.x + this.birdWidth >= pipe.x &&
       this.x <= pipe.x + pipe.pipeWidth &&
@@ -49,7 +48,6 @@ function Bird(canvas, ctx, gameStarted, gameOverMenu) {
   this.checkCollisionWithBase = () => {
     if (this.y + this.birdHeight >= canvas.height * 0.8) {
       this.y = canvas.height * 0.8 - this.birdHeight;
-      //   gameOverMenu.style.display = 'block';
       this.collided = true;
       document.querySelector('.score').style.display = 'none';
       return true;
@@ -62,7 +60,6 @@ function Bird(canvas, ctx, gameStarted, gameOverMenu) {
       this.x + this.birdWidth > pipe.x + pipe.pipeWidth &&
       !this.scoreUpdated
     ) {
-      // console.log('scoreeeee');
       score = score + 1;
       scoreElement.innerHTML = score;
       this.scoreUpdated = true;
@@ -71,7 +68,6 @@ function Bird(canvas, ctx, gameStarted, gameOverMenu) {
   };
 
   this.fly = () => {
-    //   this.gameStarted = true;
     if (!this.collided) {
       this.y = this.y - this.velocityUp;
       this.velocityDown -= this.velocityUp * this.gravity;

@@ -20,7 +20,6 @@ function Game(canvas, ctx) {
   this.bird.update();
 
   this.updateAndGeneratePipe = () => {
-    // console.log('Score: ' + this.score);
     if (this.pipeArray.length != 0) {
       if (
         this.bird.checkCollision(this.pipeArray[0]) ||
